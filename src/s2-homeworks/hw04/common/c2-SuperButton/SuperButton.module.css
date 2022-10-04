@@ -5,12 +5,15 @@
 }
 
 .secondary {
+    color: blue;
 }
 
 .default {
+    background: blue;
 }
 
 .red {
+    background-color: red;
 }
 
 .default:hover {
@@ -33,4 +36,7 @@
 }
 
 .button:disabled {
+    background: inherit;
+    opacity: 0.5;
+    color: #002E5C;
 }
