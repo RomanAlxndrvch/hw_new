@@ -25,17 +25,19 @@
     border-radius: 3px;
     border: 2px solid #06c;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .checkbox:checked {
     appearance: none;
-
+    border: 2px solid #06c;
     background-image: url('checked.svg');
     /*background: #99ff99;*/
 }
 
 .checkbox:focus {
-    border-color: #0059b3;
+    border: 2px solid #06c;
+    /* border-color: #0059b3;*/
 }
 
 .spanClassName {
