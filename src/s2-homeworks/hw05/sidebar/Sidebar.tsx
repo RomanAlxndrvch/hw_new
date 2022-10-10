@@ -32,7 +32,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         to={PATH.PRE_JUNIOR}
                         onClick={handleClose}
                         className={({isActive}) =>
-                            (isActive ? s.active && 'active' : '')}
+                            (isActive ? s.active : '')}
 
                     >
                         Pre-junior
