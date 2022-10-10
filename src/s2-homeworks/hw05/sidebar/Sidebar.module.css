@@ -6,11 +6,13 @@
     position: fixed;
     transition: 850ms;
     background: #FFFFFF;
+    visibility: hidden;
 }
 
 .sidebar.open {
     left: 0;
     position: fixed;
+    visibility: visible;
 }
 
 .background {
