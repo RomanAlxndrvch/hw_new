@@ -9,13 +9,27 @@
 
 .buttonsContainer {
     display: flex;
+    align-self: end;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
+    width: 40vw;
 }
 
 .thead {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    height: 40px;
+
+    color: #000000;
+
+    background: #E5E5E5;
 }
 
 .nameCol {
