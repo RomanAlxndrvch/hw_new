@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {homeWorkReducer} from './bll/homeWorkReducer'
 import s from './HW8.module.css'
 import s2 from '../../s1-main/App.module.css'
@@ -34,9 +34,8 @@ const HW8 = () => {
     const finalPeople = people.map((u: UserType) => <User key={u._id} u={u}/>)
 
     const sortUp = () => {
-        setPeople(
-            homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'})
-        ) // в алфавитном порядке a.name > b.name
+        setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
+        // в алфавитном порядке a.name > b.name
         setCurrentSort('up')
     }
 
@@ -47,6 +46,7 @@ const HW8 = () => {
         setCurrentSort('down')
     }
     const check18 = () => {
+        setPeople(initialPeople)
         setPeople(
             homeWorkReducer(initialPeople, {type: 'check', payload: 18})
         ) // совершеннолетние
