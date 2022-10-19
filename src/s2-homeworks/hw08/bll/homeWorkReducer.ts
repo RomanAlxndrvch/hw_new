@@ -4,7 +4,7 @@ type ActionType =
     | { type: 'sort'; payload: 'up' | 'down' }
     | { type: 'check'; payload: number }
 
-export const homeWorkReducer = (state: UserType[], action: ActionType): UserType[] => { // need to fix any
+export const homeWorkReducer = (state: UserType[], action: ActionType): UserType[] => { //
     switch (action.type) {
         case 'sort': {
             if (action.payload === 'up') {
