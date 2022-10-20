@@ -38,6 +38,7 @@ const HW10 = () => {
                     </div>
                 ) : (
                     <SuperButton
+                        style={{padding: '20px'}}
                         id={'hw10-button-start-loading'}
                         onClick={setLoading}
                     >
