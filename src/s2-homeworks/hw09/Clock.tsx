@@ -14,8 +14,7 @@ function Clock() {
             setDate(new Date)
         }, 1000))
     }
-
-
+    
     const stop = () => {
         clearInterval(timerId)
     }
