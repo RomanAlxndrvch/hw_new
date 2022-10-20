@@ -11,12 +11,14 @@ function Clock() {
 
     const start = () => {
         setTimerId(window.setInterval(() => {
+            console.log('Interval++')
             setDate(new Date)
         }, 1000))
     }
-    
+
     const stop = () => {
         clearInterval(timerId)
+        setTimerId(undefined)
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
@@ -66,14 +68,14 @@ function Clock() {
             <div className={s.buttonsContainer}>
                 <SuperButton
                     id={'hw9-button-start'}
-                    disabled={false} // пишут студенты // задизэйблить если таймер запущен
+                    disabled={timerId !== undefined} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
                     start
                 </SuperButton>
                 <SuperButton
                     id={'hw9-button-stop'}
-                    disabled={false} // пишут студенты // задизэйблить если таймер не запущен
+                    disabled={timerId === undefined} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
                     stop
