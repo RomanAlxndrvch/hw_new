@@ -39,6 +39,7 @@ const HW13 = () => {
                 setCode('200')
                 setImage(success200)
                 setInfo(res.data.info)
+                setText(res.data.errorText)
                 setTimeout(() => {
                     setLoading(false)
                 }, 2000)
