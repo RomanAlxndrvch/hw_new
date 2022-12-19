@@ -5,6 +5,8 @@ import HW12 from '../../hw12/HW12'
 import HW13 from '../../hw13/HW13'
 import {Provider} from "react-redux";
 import store from "../../hw10/bll/store";
+import HW14 from "../../hw14/HW14";
+
 
 function JuniorPlus() {
     return (
@@ -14,6 +16,7 @@ function JuniorPlus() {
                 <HW11/>
                 <HW12/>
                 <HW13/>
+                <HW14/>
             </Provider>
         </div>
     )
