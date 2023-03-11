@@ -19,7 +19,7 @@ const themes: themesType = [
     {id: 3, value: 'dark'},
 ]
 
-export type themesType = Array<{ id: number, value: string }>
+export type themesType = Array<{ id: number, value: string | number }>
 
 
 const HW12 = () => {

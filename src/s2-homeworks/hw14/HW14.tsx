@@ -37,7 +37,6 @@ const HW14 = () => {
             .then((res) => {
                 // делает студент
                 if (res && res.data.techs.length > 0) {
-                    console.log(res)
                     setLoading(false)
                     setTechs(res.data.techs)
                 }
