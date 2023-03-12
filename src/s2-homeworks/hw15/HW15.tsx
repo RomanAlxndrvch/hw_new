@@ -51,10 +51,11 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
+                // делает студент
+
                 // сохранить пришедшие данные
-                if (res) {
-                    setTechs(res.data.techs)
-                }
+
+                //
             })
     }
 
@@ -62,8 +63,8 @@ const HW15 = () => {
         // делает студент
 
         // setPage(
-        setCount(newCount)
-        setPage(newPage)
+        // setCount(
+
         // sendQuery(
         // setSearchParams(
 
