@@ -72,14 +72,16 @@ const HW15 = () => {
     }
 
     const onChangeSort = (newSort: string) => {
+        console.log(sort)
         // делает студент
 
         // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
         // sendQuery(
         // setSearchParams(
-
+        setSearchParams({page: page.toString(), count: count.toString()})
         //
     }
 
@@ -128,7 +130,7 @@ const HW15 = () => {
                     </div>
                 </div>
 
-                {mappedTechs}
+                {sort === '1developer' ? mappedTechs : mappedTechs.reverse()}
             </div>
         </div>
     )
