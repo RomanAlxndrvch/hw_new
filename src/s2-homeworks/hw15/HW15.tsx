@@ -47,12 +47,13 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any) => {
+    const sendQuery = (params: ParamsType | { count: string; page: string }) => {
         setLoading(true)
-        getTechs(params)
+        getTechs(params as ParamsType)
             .then((res) => {
                 if (res) {
                     setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
                 }
             })
     }
@@ -60,10 +61,11 @@ const HW15 = () => {
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
-        // setPage(
-        // setCount(
+        setPage(newPage)
+        setCount(newCount)
 
         // sendQuery(
+        sendQuery({page: newPage.toString(), count: newCount.toString()})
         // setSearchParams(
         setSearchParams({page: newPage.toString(), count: newCount.toString()})
         //
