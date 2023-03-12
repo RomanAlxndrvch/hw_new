@@ -60,7 +60,7 @@ const HW15 = () => {
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
-
+        console.log(techs)
         setPage(newPage)
         setCount(newCount)
 
@@ -72,7 +72,6 @@ const HW15 = () => {
     }
 
     const onChangeSort = (newSort: string) => {
-        console.log(sort)
         // делает студент
 
         // setSort(
@@ -80,6 +79,7 @@ const HW15 = () => {
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
         // sendQuery(
+        sendQuery({count: count, page: page, sort: newSort})
         // setSearchParams(
         setSearchParams({page: page.toString(), count: count.toString()})
         //
@@ -130,7 +130,7 @@ const HW15 = () => {
                     </div>
                 </div>
 
-                {sort === '1developer' ? mappedTechs : mappedTechs.reverse()}
+                {mappedTechs}
             </div>
         </div>
     )
