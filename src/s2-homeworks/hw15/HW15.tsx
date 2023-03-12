@@ -51,11 +51,9 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+                if (res) {
+                    setTechs(res.data.techs)
+                }
             })
     }
 
@@ -67,7 +65,7 @@ const HW15 = () => {
 
         // sendQuery(
         // setSearchParams(
-
+        setSearchParams({page: newPage.toString(), count: newCount.toString()})
         //
     }
 
@@ -88,7 +86,7 @@ const HW15 = () => {
         sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
-    }, [])
+    }, [searchParams])
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>

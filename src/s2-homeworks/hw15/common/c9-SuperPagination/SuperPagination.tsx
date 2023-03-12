@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {ChangeEvent, ChangeEventHandler} from 'react'
 import SuperSelect from '../../../hw07/common/c5-SuperSelect/SuperSelect'
 import {Pagination} from '@mui/material'
 import s from './SuperPagination.module.css'
+import {useSearchParams} from "react-router-dom";
 
 export type SuperPaginationPropsType = {
     id?: string
@@ -16,14 +17,18 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
         page, itemsCountForPage, totalCount, onChange, id = 'hw15',
     }
 ) => {
+    const [searchParams, setSearchParams] = useSearchParams()
     const lastPage = 10 // пишет студент // вычислить количество страниц
 
-    const onChangeCallback = (event: any, page: number) => {
+    const onChangeCallback = (event: ChangeEvent<any>, page: number) => {
         // пишет студент
+        const count = searchParams.get('count') || 0
+        onChange(page, +count)
     }
 
-    const onChangeSelect = (event: any) => {
-        // пишет студент
+    const onChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+        const page = searchParams.get('page') || 0
+        onChange(+page, +event.target.value)
     }
 
     return (
