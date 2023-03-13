@@ -19,11 +19,11 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
 ) => {
     const [searchParams, setSearchParams] = useSearchParams()
     const lastPage = Math.ceil(totalCount / itemsCountForPage)
-   
+
 
     const onChangeCallback = (event: ChangeEvent<any>, page: number) => {
         // пишет студент
-        const count = searchParams.get('count') || 0
+        const count = searchParams.get('count') || 4
         onChange(page, +count)
     }
 

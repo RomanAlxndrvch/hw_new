@@ -60,7 +60,7 @@ const HW15 = () => {
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
-        console.log(techs)
+        console.log(count, page)
         setPage(newPage)
         setCount(newCount)
 
@@ -74,7 +74,7 @@ const HW15 = () => {
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        console.log(count, page)
+
         // setSort(
         setSort(newSort)
 
