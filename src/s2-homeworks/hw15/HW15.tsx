@@ -47,7 +47,7 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any /*ParamsType | { count: string; page: string }*/) => {
+    const sendQuery = (params: ParamsType | { count: string; page: string }) => {
         setLoading(true)
         getTechs(params as ParamsType)
             .then((res) => {
@@ -58,7 +58,7 @@ const HW15 = () => {
             })
     }
 
-    /*const onChangePagination = (newPage: number, newCount: number) => {
+    const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
         console.log(techs)
         setPage(newPage)
@@ -80,23 +80,23 @@ const HW15 = () => {
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
         // sendQuery(
-        sendQuery({count, page, sort: newSort})
+        sendQuery({count: count, page: page, sort: newSort})
         // setSearchParams(
         setSearchParams({page: page.toString(), count: count.toString()})
         //
-    }*/
+    }
 
-    const onChangePagination = (newPage: number, newCount: number) => {
+    /*const onChangePagination = (newPage: number, newCount: number) => {
         setPage(newPage)
         setCount(newCount)
         // делает студент
         const pageQuery = newPage !== 1 ? {page: newPage} : {}
-        /* тут по условию  создаю обьект с ключом  и значением которое пришло или пустой обьект */
+        /!* тут по условию  создаю обьект с ключом  и значением которое пришло или пустой обьект *!/
         const countQuery = newCount !== 4 ? {count: newCount} : {}
-        const {count, page, ...lastQueries} = Object.fromEntries(searchParams) /*тут из иобьекта достал два значения count и  page - типо  удалил из обьекта эти два значения*/
+        const {count, page, ...lastQueries} = Object.fromEntries(searchParams) /!*тут из иобьекта достал два значения count и  page - типо  удалил из обьекта эти два значения*!/
         const allQuery = {...pageQuery, ...countQuery, ...lastQueries}
-
-        sendQuery(allQuery)
+        console.log(lastQueries)
+        sendQuery(count)
 
         // @ts-ignore
         setSearchParams(allQuery)
@@ -122,7 +122,7 @@ const HW15 = () => {
 
         // @ts-ignore
         setSearchParams(allQuery)
-    }
+    }*/
 
 
     useEffect(() => {
