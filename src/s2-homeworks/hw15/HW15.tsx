@@ -77,52 +77,16 @@ const HW15 = () => {
         console.log(count, page)
         // setSort(
         setSort(newSort)
+
         setPage(1) // при сортировке сбрасывать на 1 страницу
+        searchParams.set("page", '1')
 
         // sendQuery(
-        sendQuery({count: count, page: page, sort: newSort})
+        sendQuery({count: count, page: 1, sort: newSort})
         // setSearchParams(
         setSearchParams({page: page.toString(), count: count.toString()})
         //
     }
-
-    /*const onChangePagination = (newPage: number, newCount: number) => {
-        setPage(newPage)
-        setCount(newCount)
-        // делает студент
-        const pageQuery = newPage !== 1 ? {page: newPage} : {}
-        /!* тут по условию  создаю обьект с ключом  и значением которое пришло или пустой обьект *!/
-        const countQuery = newCount !== 4 ? {count: newCount} : {}
-        const {count, page, ...lastQueries} = Object.fromEntries(searchParams) /!*тут из иобьекта достал два значения count и  page - типо  удалил из обьекта эти два значения*!/
-        const allQuery = {...pageQuery, ...countQuery, ...lastQueries}
-        console.log(lastQueries)
-        sendQuery(count)
-
-        // @ts-ignore
-        setSearchParams(allQuery)
-        //sendQuery()
-        // setSearchParams(
-
-        //
-    }
-
-    const onChangeSort = (newSort: string) => {
-        // делает студент
-        setSort(newSort)
-        setPage(1)
-
-        const sortQuery = newSort !== '' ? {sort: newSort} : {}
-
-        const {sort, page, ...lastQueries} = Object.fromEntries(searchParams)
-
-
-        const allQuery = {...sortQuery, ...lastQueries}
-
-        sendQuery(allQuery)
-
-        // @ts-ignore
-        setSearchParams(allQuery)
-    }*/
 
 
     useEffect(() => {
